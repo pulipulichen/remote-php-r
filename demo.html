@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>r-remote-api</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript">
+//var rscript = $("#rscript").text();
+//var rscript2 = "2";
+$.get("rscript.R", function (rscript) {
+    //alert(rsc)
+    $.getJSON("index.php?callback=?", {'d': rscript}, function (result) {
+        //result = JSON.stringify(result);
+        result = result.join("\n");
+        $("#result").text(result);
+    });
+});
+//console.log(rscript);
+//console.log(rscript2);
+
+</script>
+<pre id="result"></pre>
+    </body>
+</html>

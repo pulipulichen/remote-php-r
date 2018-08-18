@@ -1,5 +1,5 @@
 <?php
-$rscript_exec = 'D:/Program Files/R/R-3.0.2/bin/RScript.exe';
+include '../config.php';
 
 if (strpos($rscript_exec, " ") !== 0) {
     $rscript_exec = '"' . $rscript_exec . '"';

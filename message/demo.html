@@ -16,7 +16,7 @@ and open the template in the editor.
 
 
 <script type="text/javascript">
-$.get("/remote-php-r/js/message/demo.R", function (rscript) {
+$.get("/remote-php-r/message/demo.R", function (rscript) {
     $.getJSON("/remote-php-r/message/?callback=?", {'d': rscript}, function (result) {
         result = result.join("\n");
         $("#result").text(result);

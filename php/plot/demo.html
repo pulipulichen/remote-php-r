@@ -16,14 +16,14 @@ and open the template in the editor.
 
 
 <script type="text/javascript">
-$.get("/remote-php-r/js/message/demo.R", function (rscript) {
-    $.getJSON("/remote-php-r/message/?callback=?", {'d': rscript}, function (result) {
-        result = result.join("\n");
-        $("#result").text(result);
+$.get("/remote-php-r/js/plot/demo.R", function (rscript) {
+    $.getJSON("/remote-php-r/plot/?callback=?", {'d': rscript}, function (result) {
+        //result = result.join("\n");
+        $("#result").attr("src", result);
     });
 });
 </script>
-<pre id="result"></pre>
+<img id="result" />
 
 
 
